@@ -1,6 +1,5 @@
 'use client';
 
-import { error } from 'console';
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 
@@ -20,8 +19,6 @@ export default function Form({
   customers,
 }: Readonly<{ customers: CustomerField[] }>) {
   const [state, dispatch] = useFormState(createInvoice, initialState);
-
-  console.log('state => ', state);
 
   return (
     <form action={dispatch}>
