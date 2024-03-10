@@ -118,6 +118,8 @@ export async function authenticate(
   try {
     await signIn('credentials', formData);
   } catch (error) {
+    console.error('Failed to authenticate :', error);
+
     if (error instanceof AuthError) {
       if (error.type === 'CredentialsSignin') {
         return 'Invalid credentials.';
